@@ -5,7 +5,7 @@ import pandas as pd
 st.write("""
 # simple stock price app
 
-shown are the stock closing price and volume of google!
+shown are the stock closing price and volume of apple!
 
 """)
 
