@@ -4,22 +4,20 @@ import pandas as pd
 
 st.write("""
 # simple stock price app
-
-shown are the stock closing price and volume of apple!
-
+Enter the stock symbol to see its closing price and volume!
 """)
 
-tickerSymbol='AAPL'
-tickerData=yf.Ticker(tickerSymbol)
-tickerDf=tickerData.history(period='1d', start='2010-5-31', end='2020-5-31')
+ticker_symbol = st.text_input("Enter a stock symbol (e.g. 'AAPL' for Apple):")
+ticker_data = yf.Ticker(ticker_symbol)
+ticker_df = ticker_data.history(period='1d', start='2010-5-31', end='2020-5-31')
 
 st.write("""
 ## closing price
 """)
 
-st.line_chart(tickerDf.Close)
+st.line_chart(ticker_df.Close)
 
 st.write("""
 ## volume price
 """)
-st.line_chart(tickerDf.Volume)
+st.line_chart(ticker_df.Volume)
